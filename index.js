@@ -13,9 +13,9 @@ io.on('connection', (socket) =>{
         socket.emit('start', 'Notification of chat');
     });
     
-    socket.on('chat message', (msg) => {
+    socket.on('message_data', (msg) => {
         console.log('message: ' + msg);
-        socket.emit('response message', Math.floor(Math.random()*10000) + ' random number from server');
+        socket.emit('response_data', Math.floor(Math.random()*10000) + ' random number from server');
     });
 });
 
